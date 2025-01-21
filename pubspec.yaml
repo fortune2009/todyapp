@@ -1,0 +1,70 @@
+name: todyapp
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.8
+  flutter_screenutil: ^5.9.3
+  http: ^1.3.0
+  provider: ^6.1.2
+  flutter_svg: ^2.0.17
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^4.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/svg/
+    - assets/fonts/
+
+  fonts:
+    - family: SF Pro Display
+      fonts:
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-Black.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-BlackItalic.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-Bold.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-BoldItalic.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-Heavy.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-HeavyItalic.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-Light.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-LightItalic.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-Medium.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-MediumItalic.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-Regular.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-RegularItalic.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-SemiboldItalic.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-Thin.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-ThinItalic.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-Ultralight.ttf
+        - asset: assets/fonts/SF-Pro-Display/SF-Pro-Display-UltralightItalic.ttf
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
