@@ -10,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    _startTimer(RoutePaths.homePage);
+    _startTimer(RoutePaths.bottomNav);
     super.initState();
   }
 
@@ -27,26 +27,6 @@ class _SplashScreenState extends State<SplashScreen> {
         backgroundColor: AppColors.primaryColor,
         body: Stack(
           children: [
-            // Positioned.fill(
-            //   child: Align(
-            //     alignment: Alignment.topCenter,
-            //     child: SizedBox(
-            //       // decoration: const BoxDecoration(color: AppColors.primaryColor),
-            //       width: deviceWidth(context),
-            //       height: deviceHeight(context),
-            //       child: Container(
-            //         width: deviceWidth(context),
-            //         decoration: const BoxDecoration(
-            //           // color: AppColors.white,
-            //           image: DecorationImage(
-            //             fit: BoxFit.cover,
-            //             image: AssetImage(ImageAssets.splashBG),
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Positioned(
               bottom: 100.h,
               top: 100.h,

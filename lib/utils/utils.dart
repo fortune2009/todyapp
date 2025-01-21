@@ -7,3 +7,16 @@ double deviceHeight(BuildContext context) {
 double deviceWidth(BuildContext context) {
   return MediaQuery.of(context).size.width;
 }
+
+navPush(BuildContext context, String route) {
+  Navigator.push(context, MainRouter.generateRoute(RouteSettings(name: route)));
+}
+
+navPushReplace(BuildContext context, String route) {
+  Navigator.pushReplacement(
+      context, MainRouter.generateRoute(RouteSettings(name: route)));
+}
+
+navPop(BuildContext context) {
+  Navigator.pop(context);
+}

@@ -1,5 +1,9 @@
-import 'package:todyapp/utils/all_packages.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import 'package:todyapp/core/bottom_nav_model.dart';
 import 'package:todyapp/utils/styles.dart';
+
+import 'package:todyapp/utils/all_packages.dart';
 
 class BottomNav extends StatefulWidget {
   final bool? showProviderProfile;
@@ -11,54 +15,25 @@ class BottomNav extends StatefulWidget {
   }
 }
 
-class _BottomNav extends State<BottomNav> with WidgetsBindingObserver {
-  @override
-  void initState() {
-    WidgetsBinding.instance.addObserver(this);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    switch (state) {
-      case AppLifecycleState.resumed:
-        break;
-      case AppLifecycleState.paused:
-        break;
-      case AppLifecycleState.inactive:
-        break;
-      case AppLifecycleState.detached:
-        _fetchData(context);
-        break;
-      default:
-        break;
-    }
-  }
-
+class _BottomNav extends State<BottomNav> {
   Future<bool> showExitPopup() async {
     return await showDialog(
           context: context,
           builder: (context) => AlertDialog(
             title: Styles.regular('Exit App',
-                fontSize: 14.sp, color: AppColors.black),
+                fontSize: 14.sp, color: AppColors.darkText),
             content: Styles.regular('Do you want to exit an App?',
-                fontSize: 14.sp, color: AppColors.black),
+                fontSize: 14.sp, color: AppColors.darkText),
             actions: [
               ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(false),
                 child: Styles.regular('No',
-                    fontSize: 14.sp, color: AppColors.black),
+                    fontSize: 14.sp, color: AppColors.darkText),
               ),
               ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(true),
                 child: Styles.regular('Yes',
-                    fontSize: 14.sp, color: AppColors.black),
+                    fontSize: 14.sp, color: AppColors.darkText),
               ),
             ],
           ),
@@ -72,7 +47,7 @@ class _BottomNav extends State<BottomNav> with WidgetsBindingObserver {
       return WillPopScope(
         onWillPop: showExitPopup,
         child: Scaffold(
-          backgroundColor: AppColors.scaffoldBGColor,
+          backgroundColor: AppColors.white,
           // drawer: customDrawer(context, drawerKey: homeKey, model),
           bottomNavigationBar: BottomNavigationBar(
               onTap: (index) => model.updateIndex(index, context),
@@ -83,7 +58,7 @@ class _BottomNav extends State<BottomNav> with WidgetsBindingObserver {
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w500),
               unselectedLabelStyle: TextStyle(
-                  color: AppColors.primaryBgColor,
+                  color: AppColors.primaryColor,
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w500),
               backgroundColor: AppColors.white,
@@ -101,49 +76,48 @@ class _BottomNav extends State<BottomNav> with WidgetsBindingObserver {
   userBottomTabItems(BuildContext context) {
     return [
       BottomNavigationBarItem(
-        activeIcon: SvgPicture.asset(
-          SvgAssets.homeActive,
-          color: AppColors.primaryColor,
-        ),
-        icon: SvgPicture.asset(
-          SvgAssets.home,
-          color: AppColors.iconGrey,
-        ),
-        label: "Home",
-      ),
+          activeIcon: SvgPicture.asset(
+            SvgAssets.homeActive,
+          ),
+          icon: SvgPicture.asset(
+            SvgAssets.home,
+          ),
+          label: ""),
       BottomNavigationBarItem(
-        activeIcon: SvgPicture.asset(
-          SvgAssets.giftActive,
-          color: AppColors.primaryColor,
-        ),
-        icon: SvgPicture.asset(
-          SvgAssets.giftActive,
-          color: AppColors.iconGrey,
-        ),
-        label: "Gift Cards",
-      ),
+          activeIcon: SvgPicture.asset(
+            SvgAssets.directInboxActive,
+          ),
+          icon: SvgPicture.asset(
+            SvgAssets.directInbox,
+          ),
+          label: ""),
       BottomNavigationBarItem(
-        activeIcon: SvgPicture.asset(
-          SvgAssets.loyalty,
-          color: AppColors.primaryColor,
-        ),
-        icon: SvgPicture.asset(
-          SvgAssets.loyalty,
-          color: AppColors.iconGrey,
-        ),
-        label: "Loyalty",
-      ),
+          activeIcon: SvgPicture.asset(
+            SvgAssets.calendar,
+            color: AppColors.primaryColor,
+          ),
+          icon: SvgPicture.asset(
+            SvgAssets.calendar,
+          ),
+          label: ""),
       BottomNavigationBarItem(
-        activeIcon: SvgPicture.asset(
-          SvgAssets.transactions,
-          color: AppColors.primaryColor,
-        ),
-        icon: SvgPicture.asset(
-          SvgAssets.transactions,
-          color: AppColors.iconGrey,
-        ),
-        label: "Transactions",
-      ),
+          activeIcon: SvgPicture.asset(
+            SvgAssets.category,
+            color: AppColors.primaryColor,
+          ),
+          icon: SvgPicture.asset(
+            SvgAssets.category,
+          ),
+          label: ""),
+      BottomNavigationBarItem(
+          activeIcon: SvgPicture.asset(
+            SvgAssets.filePlus,
+            color: AppColors.primaryColor,
+          ),
+          icon: SvgPicture.asset(
+            SvgAssets.filePlus,
+          ),
+          label: ""),
     ];
   }
 }

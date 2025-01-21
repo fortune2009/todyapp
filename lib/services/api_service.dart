@@ -6,9 +6,12 @@ class ApiService {
   final String baseUrl;
 
   ApiService({required this.baseUrl});
-
-  Future<List<Product>> fetchProducts() async {
-    final response = await http.get(Uri.parse('$baseUrl/products'));
+  Future<List<Product>> fetchTodos(
+      String? url, Map<String, dynamic>? queryParameters) async {
+    final Uri uri = Uri.https(baseUrl, "/v1/$url", queryParameters);
+    final response = await http.get(
+      uri,
+    );
 
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);

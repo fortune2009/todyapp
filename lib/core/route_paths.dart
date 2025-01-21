@@ -1,4 +1,4 @@
 class RoutePaths {
   static const String splash = '/';
-  static const String homePage = '/homePage';
+  static const String bottomNav = '/bottomNav';
 }

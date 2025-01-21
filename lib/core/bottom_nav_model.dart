@@ -1,3 +1,5 @@
+import 'package:todyapp/screens/inbox_page.dart';
+
 import '../utils/all_packages.dart';
 
 class BottomNavModel extends ChangeNotifier {
@@ -6,7 +8,7 @@ class BottomNavModel extends ChangeNotifier {
 
   final List<Widget> _children = [
     const HomePage(),
-    Container(),
+    const InboxPage(),
     Container(),
     Container(),
     Container(),

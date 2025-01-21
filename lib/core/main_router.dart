@@ -1,3 +1,4 @@
+import 'package:todyapp/core/bottom_nav.dart';
 import 'package:todyapp/utils/all_packages.dart';
 
 class MainRouter {
@@ -5,8 +6,8 @@ class MainRouter {
     switch (settings.name) {
       case RoutePaths.splash:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
-      case RoutePaths.homePage:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+      case RoutePaths.bottomNav:
+        return MaterialPageRoute(builder: (_) => const BottomNav());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
