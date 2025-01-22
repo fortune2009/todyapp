@@ -3,7 +3,8 @@ import 'package:todyapp/utils/all_packages.dart';
 Widget addNewTask(
     {BuildContext? context,
     TextEditingController? titleController,
-    TextEditingController? descriptionController}) {
+    TextEditingController? descriptionController,
+    Function()? onTap}) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
     child: Column(children: [
@@ -31,10 +32,7 @@ Widget addNewTask(
             ],
           ),
           GestureDetector(
-            onTap: () {
-              navPop(context!);
-              HapticFeedback.lightImpact();
-            },
+            onTap: onTap,
             child: SizedBox(
                 width: 30.w,
                 height: 20.h,

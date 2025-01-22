@@ -11,7 +11,7 @@ class SvgAssets {
   /// bottom nav
   static const String home = "$SVGPATH/home.svg";
   static const String homeActive = "$SVGPATH/home-active.svg";
-  static const String directInboxSmall = "$SVGPATH/direct-inbox=small.svg";
+  static const String directInboxSmall = "$SVGPATH/direct-inbox-small.svg";
   static const String directInbox = "$SVGPATH/direct-inbox.svg";
   static const String directInboxActive = "$SVGPATH/direct-inbox-active.svg";
   static const String calendar = "$SVGPATH/calendar.svg";
@@ -32,4 +32,7 @@ class SvgAssets {
   static const String completed = "$SVGPATH/completed.svg";
   static const String back = "$SVGPATH/back.svg";
   static const String search = "$SVGPATH/search-normal.svg";
+  static const String add = "$SVGPATH/add.svg";
+  static const String alarm = "$SVGPATH/alarm.svg";
+  static const String chat = "$SVGPATH/chat.svg";
 }
