@@ -19,10 +19,9 @@ class InboxViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      Map<String, dynamic>? query = {"page": 1, "limit": 10};
+      Map<String, String>? query = {"page": "1", "limit": "10"};
       final TodoResponse res = await apiService.fetchTodos("todos", query);
       todoItem = res.items;
-      debugPrint("Fetching todos: ${todoItem!.first.toJson()}");
     } catch (error) {
       debugPrint("Error fetching todos: $error");
     }

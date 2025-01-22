@@ -271,7 +271,8 @@ class InboxPage extends StatelessWidget {
                         .editTodos(
                             id: todo.id,
                             title: titleController.text,
-                            description: descriptionController.text)
+                            description: descriptionController.text,
+                            isCompleted: todo.isCompleted!)
                         .then((value) {
                       viewModel.fetchTodos();
                       HapticFeedback.lightImpact();

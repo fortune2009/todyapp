@@ -15,12 +15,8 @@ class ApiService {
   ApiService({this.baseUrl = "api.nstack.in"});
 
   Future<TodoResponse> fetchTodos(
-      String? url, Map<String, dynamic>? queryParameters) async {
-    debugPrint("Fetching todos: $queryParameters");
-    final Uri uri = Uri.https(
-      baseUrl,
-      "/v1/$url",
-    );
+      String? url, Map<String, String>? queryParameters) async {
+    final Uri uri = Uri.https(baseUrl, "/v1/$url", queryParameters);
 
     final response = await http.get(uri, headers: headers);
 
